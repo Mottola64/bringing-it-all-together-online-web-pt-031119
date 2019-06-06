@@ -50,5 +50,14 @@ attr_accessor :name, :breed, :id
     dog
   end
 
+  def self.find_by_id
+    sql = <<-SQL
+    SELECT *
+    FROM dogs
+    WHERE id = ?
+    LIMIT 1
+    SQL
+  end
 
+  
 end
